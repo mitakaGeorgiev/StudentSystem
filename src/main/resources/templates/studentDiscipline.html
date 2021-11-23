@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Change Student Discipline</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<style>
+body {
+	  background-image: url('/images/groupStudents.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: fixed !important;
+	    background-attachment: initial;
+		
+	
+	    
+	    background-position: center, center;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+	
+	
+	  width:100%;
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	function AddDiscipline(studentId) 
+	{
+		var discipline=$("#disciplines").val();
+		$.ajax({
+     		url: "/changeCurrentStudentDiscipline/AddDiscipline/?discipline="+discipline+"&studentId="+studentId,
+     		type: "get",
+     		success: function(fragment){    			
+     			window.location.reload();
+ 		    },
+    	 error: function(xhr){
+     	        alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+          }
+     	});
+     }
+	function RemoveDiscipline(studentId) {
+		var discipline=$("#disciplines").val();
+     	$.ajax({
+     		url: "/changeCurrentStudentDiscipline/RemoveDiscipline/?discipline="+discipline+"&studentId="+studentId,
+     		type: "get",
+     		success: function(fragment){
+     			window.location.reload();
+ 		    },
+     	 error: function(xhr){
+     	        alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+          }
+     	});
+     }
+ </script>     
+</head>
+<body>
+
+	<div class="container text-center">
+    
+	    <div>
+	        <h1>List of Disciplines</h1>
+	    </div>
+	     
+	    <div>
+	    
+	    <div class="form-group row"      >
+                
+                    <label class="col-4 col-form-label">discipline </label>
+                    
+                    <select class="form control"   id="disciplines"> 
+                            <option  th:each="discipline,index : ${listDisciplines}" th:value="${discipline.id}" th:text="${discipline.name}"></option>        
+                    </select>
+                    
+                  
+                    
+                   
+                    <button type="button" th:onclick="'AddDiscipline('+${Student.id}+')'" >Add</button>
+                   
+                    <button type="button" th:onclick="'RemoveDiscipline('+${Student.id}+')'" >Remove</button>
+	    
+	    
+	    </div>
+	        <table class="table table-striped table-bordered">
+	            <thead class="thead-dark">
+	                <tr>
+	                    <th>number</th>
+	                    <th>name</th>
+	                    <th>credits</th>
+	                    <th></th>
+	                    
+	                </tr>
+	            </thead>
+	            <tbody  >
+	                <tr th:each="Discipline,index: ${setDisciplines}">
+	                    <td th:text="${Discipline.id}">First Name</td>
+	                    <td th:text="${Discipline.name}">Last Name</td>
+	                    <td th:text="${Discipline.credits}">course</td>
+	                    
+	                    <td>
+	                    
+	                    </td> 
+	                </tr>
+	                <button   class="btn btn-primary" type="submit">Save</button>
+	                 
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
+		                		  
+
+</body>
+</html>
