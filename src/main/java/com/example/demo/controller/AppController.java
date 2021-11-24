@@ -105,4 +105,11 @@ public class AppController {
 		model.addAttribute("listDisciplines",listDisciplines);
     	return "studentDiscipline :: testDiscipline-row";
    }
+	@PostMapping("/StudentDisciplineSave")   
+    public String StudentDisciplineSave () {
+    	
+    	
+    	
+    	return "index";
+    }
 }
