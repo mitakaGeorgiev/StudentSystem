@@ -13,19 +13,13 @@ body {
 	    background-repeat: no-repeat;
 	    background-attachment: fixed !important;
 	    background-attachment: initial;
-		
-	
-	    
 	    background-position: center, center;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
 	    background-size: cover;
-	
-	
-	  width:100%;
-	}
-
+	    width:100%;
+	 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -40,8 +34,8 @@ body {
  		    },
     	 error: function(xhr){
      	        alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
-          }
-     	});
+         	}
+     	 });
      }
 	function RemoveDiscipline(studentId) {
 		var discipline=$("#disciplines").val();
@@ -53,37 +47,25 @@ body {
  		    },
      	 error: function(xhr){
      	        alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
-          }
+         	}
      	});
-     }
+    }
  </script>     
 </head>
 <body>
 <div th:replace="header :: header"> </div>
-	<div class="container text-center">
-    
+<div class="container text-center">
 	    <div>
 	        <h1>List of Disciplines</h1>
-	    </div>
-	     
+	    </div>    
 	    <div>
-	    
-	    <div class="form-group row"      >
-                
+	    <div class="form-group row">
                     <label class="col-4 col-form-label">discipline </label>
-                    
                     <select class="form control"   id="disciplines"> 
                             <option  th:each="discipline,index : ${listDisciplines}" th:value="${discipline.id}" th:text="${discipline.name}"></option>        
                     </select>
-                    
-                  
-                    
-                   
                     <button type="button" th:onclick="'AddDiscipline('+${Student.id}+')'" >Add</button>
-                   
                     <button type="button" th:onclick="'RemoveDiscipline('+${Student.id}+')'" >Remove</button>
-	    
-	    
 	    </div>
 	        <table class="table table-striped table-bordered">
 	            <thead class="thead-dark">
@@ -91,31 +73,23 @@ body {
 	                    <th>number</th>
 	                    <th>name</th>
 	                    <th>credits</th>
-	                    <th></th>
-	                    
+	                    <th></th> 
 	                </tr>
 	            </thead>
-	            <tbody  >
+	            <tbody>
 	                <tr th:each="Discipline,index: ${setDisciplines}">
 	                    <td th:text="${Discipline.id}">First Name</td>
 	                    <td th:text="${Discipline.name}">Last Name</td>
 	                    <td th:text="${Discipline.credits}">course</td>
-	                    
-	                    <td>
-	                    
-	                    </td> 
 	                </tr>
 	               
 	                <form th:action="@{/StudentDisciplineSave}" 
         			 method="post" style="max-width: 600px; margin: 0 auto;">
 	                <button   class="btn btn-primary" type="submit">Save</button>
-	                </form>
-	                 
+	                </form>    
 	            </tbody>
 	        </table>
 	    </div>
-	</div>
-		                		  
-
+</div>
 </body>
 </html>

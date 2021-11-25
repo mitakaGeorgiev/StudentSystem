@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Students and disciplines</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+	    <div>
+	        <h1>List of Teachers and their number of disciplines</h1>
+	    </div> 
+	    <div>
+	        <table class="table table-striped table-bordered">
+	            <thead class="thead-dark">
+	                <tr>
+	                    <th>First Name</th>
+	                    <th>Last Name</th>
+	                    <th>Number of disciplines</th>
+	                </tr>
+	            </thead>
+	            <tbody  >
+	                <tr th:each="view2: ${view2}">
+	                    <td th:text="${view2.firstName}">First Name</td>
+					    <td th:text="${view2.lastName}">Last Name</td>
+					    <td th:text="${view2.numberDisciplines}">Number of disciplines</td>
+	                </tr>
+	                 
+	            </tbody>
+	        </table>
+	        
+	    </div>
+</div>
+<div class="container text-center">
+	    <div>
+	        <h1>List of Students</h1>
+	    </div> 
+	    <div>
+	        <table class="table table-striped table-bordered">
+	            <thead class="thead-dark">
+	                <tr>
+	                    <th>First Name</th>
+	                    <th>Last Name</th>
+	                    <th>Course</th>
+	                </tr>
+	            </thead>
+	            <tbody  >
+	                <tr th:each="view1: ${view1}">
+	                    <td th:text="${view1.firstName}">First Name</td>
+					    <td th:text="${view1.lastName}">Last Name</td>
+					    <td th:text="${view1.course}">Course</td>
+	                </tr>
+	                 
+	            </tbody>
+	        </table>
+	        
+	    </div>
+	</div>
+</body>
+</html>

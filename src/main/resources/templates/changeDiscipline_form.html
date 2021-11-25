@@ -24,19 +24,17 @@ body {
 	
 	  width:100%;
 	}
-
 </style>
 <script>
  function getStudentId(studentid) {
     window.location.href="/changeCurrentStudentDiscipline?studentId="+studentid
     			
-    }
+ }
  </script>
 </head>
 <body>
 <div th:replace="header :: header"> </div>
 	<div class="container text-center">
-    
 	    <div>
 	        <h1>List of Students</h1>
 	    </div>
@@ -52,25 +50,19 @@ body {
 	                    
 	                </tr>
 	            </thead>
-	            <tbody  >
+	            <tbody>
 	                <tr th:each="Student,index: ${listStudents}">
 	                    <td th:text="${Student.firstName}">First Name</td>
 	                    <td th:text="${Student.lastName}">Last Name</td>
 	                    <td th:text="${Student.course}">course</td>
-	                    
 	                    <td>
 	                    <button th:onclick="'getStudentId('+${Student.id}+')'">Edit</button>
-	                    
 	                    </td>
-	                    
-	                </tr>
-	                 
+	                </tr>  
 	            </tbody>
 	        </table>
-	        
 	    </div>
 	</div>
-		                		  
-            
+         
 </body>
 </html>
