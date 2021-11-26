@@ -5,14 +5,31 @@
 <title>Students and disciplines</title>
 <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<style>
+body {
+	  background-image: url('/images/studs&disc.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: fixed !important;
+	    background-attachment: initial;
+	    background-position: center, center;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+	    width:100%;
+	 }
+#cooltable{background-color:black; opacity:75%}
+.table tr{color:white}
+</style>
 </head>
 <body>
+<div th:replace="header :: header"> </div>
 <div class="container text-center">
 	    <div>
 	        <h1>List of Students and their disciplines</h1>
 	    </div> 
 	    <div>
-	        <table class="table table-striped table-bordered">
+	        <table id="cooltable" class="table table-striped table-bordered">
 	            <thead class="thead-dark">
 	                <tr>
 	                    <th>First Name</th>

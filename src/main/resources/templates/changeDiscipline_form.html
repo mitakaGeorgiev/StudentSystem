@@ -7,23 +7,23 @@
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <style>
+
 body {
 	  background-image: url('/images/groupStudents.jpg');
 	    background-repeat: no-repeat;
 	    background-attachment: fixed !important;
-	    background-attachment: initial;
-		
-	
-	    
+	    background-attachment: initial;    
 	    background-position: center, center;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
-	    background-size: cover;
-	
-	
-	  width:100%;
+	    background-size: cover;	
+	  	width:100%;
 	}
+#cooltable{background-color:black;
+opacity:75%}
+.table tr{color:white}
+
 </style>
 <script>
  function getStudentId(studentid) {
@@ -40,7 +40,7 @@ body {
 	    </div>
 	     
 	    <div>
-	        <table class="table table-striped table-bordered">
+	        <table   id="cooltable" class="table table-striped table-bordered">
 	            <thead class="thead-dark">
 	                <tr>
 	                    <th>First Name</th>
