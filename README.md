@@ -7,6 +7,8 @@ Database-MySQL.
 
 Front End-the frontEnd was made with a combination of the HTML,CSS, JS, jQuery and elements of bootstrap implemented with the help of thymeleaf.
 
+The deleting and adding a discipline for a student is made using Asynchronous AJAX requests.
+
 Backend (or “server-side”) - Spring Boot 2.5.4.
 
 Build automation tool -Maven
