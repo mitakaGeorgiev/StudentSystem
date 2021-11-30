@@ -1,5 +1,5 @@
 # StudentSystem
-A web application used for managing a sistem with students in a university
+A web application used for managing a system with students in a university
 # Tools and technologies used for creating this project
 Eclipse & Java IDE - 2021 for realization of the project.
 
